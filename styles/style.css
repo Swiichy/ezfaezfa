@@ -1,0 +1,591 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+}
+main, header, .footerInfo{
+    margin: 0 auto 0 auto;
+    max-width: 95rem;
+    width: 95vw;
+}
+.sign {
+    font-weight: bold;
+    color: #0056fc;
+}
+.userNavigation {
+    width: 25rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.select, .sign {
+    text-decoration: none;
+    height: 100%;
+    line-height: 4rem;
+    text-align: center;
+    border-top: solid 0.15rem transparent;
+    flex-grow: 1;
+}
+.select:hover {
+    border-top: solid 0.15rem #0056fc;
+    color: #0056fc;
+}
+.research {
+    background-color: #F2F2F2;
+    width: fit-content;
+    padding: 0;
+    padding-left: 1.5rem;
+    border-radius: 1rem;
+}
+.btnResearch {
+    color: white;
+    font-weight: bold;
+    background-color: #0056fc;
+    border: transparent;
+    border-radius: 0 1rem 1rem 0;
+    padding: .75rem;
+    position: absolute;
+    margin: 0;
+}
+.inResearch {
+    border: #F2F2F2 solid 1px;
+    border-right: transparent;
+    font-weight: bold;
+    width: 20vw;
+    padding: .7rem;
+}
+.userFilter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    --heightSwitch: 2.5rem;
+    max-width: 58rem;
+}
+.userFilter > h3 {
+    float: left;
+}
+/*Filtre switch toggle Eco*/
+.switchEco {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 10rem;
+    height: var(--heightSwitch);
+}
+.textFilter {
+    font-weight: bold;
+    position: absolute;
+    right: 1rem;
+    line-height: 2.5rem;
+    user-select: none;
+}
+.eco {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderEco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderEco::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.075rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.textFilterAfter {
+    left: 1rem;
+    top: -.1rem;
+}
+.eco:checked + .sliderEco {
+    background-color: #0056fc;
+    color: white;
+}
+.eco:checked + .sliderEco::before, .eco:checked ~ .fa-money-bill-wave{
+    transform: translateX(7.5rem);
+}
+.fa-money-bill-wave {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
+}
+/*Filtre switch toggle Fam*/
+.switchFam {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 8rem;
+    height: var(--heightSwitch);
+}
+.fam {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderFam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderFam::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.075rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.fam:checked + .sliderFam {
+    background-color: #0056fc;
+    color: white;
+}
+.fam:checked + .sliderFam::before, .fam:checked ~ .fa-child {
+    transform: translateX(5.7rem);
+}
+.fa-child {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
+}
+/*Filtre switch toggle Rom*/
+.switchRom {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 10rem;
+    height: var(--heightSwitch);
+}
+.rom {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sliderRom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderRom::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.075rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.rom:checked + .sliderRom {
+    background-color: #0056fc;
+    color: white;
+}
+.rom:checked + .sliderRom::before, .rom:checked ~ .fa-heart {
+    transform: translateX(7.5rem);
+}
+.fa-heart {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
+}
+/*Filtre switch toggle Ani*/
+.switchAni {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 13.5rem;
+    height: var(--heightSwitch);
+}
+.ani {
+    position: relative;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    z-index: 99;
+}
+.sliderAni {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: solid 2px #d9d9d9;
+    color: transparent;
+    border-radius: 2rem;
+    transition: .2s;
+}
+.sliderAni::before {
+    position: absolute;
+    content: "";
+    height: 2.4rem;
+    width: 2.4rem;
+    left: -.1rem;
+    bottom: -.075rem;
+    background-color: #DEEBFF;
+    border-radius: 50%;
+    transition: .2s;
+}
+.fa-dog {
+    position: absolute;
+    color: #0056fc;
+    transition: .2s;
+}
+.ani:checked + .sliderAni {
+    background-color: #0056fc;
+    color: white;
+}
+.ani:checked ~ .fa-dog, .ani:checked ~ .sliderAni::before{
+    transform: translateX(11rem);
+}
+.userInfo {
+    display: flex;
+    align-items: center;
+}
+.userInfo > p {
+    margin-left: .8rem;
+}
+.logoInfo {
+    border: #e7e7e7 solid 1px;
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.fa-info, .fa-star {
+    color: #0056fc;
+}
+.lightStar {
+    color: #DEEBFF;
+}
+.popular {
+    background-color: #F2F2F2;
+    padding: 0 2rem;
+    margin-left: 2.3rem;
+    border-radius: 1.5rem;
+    height: 43.5rem;
+    width: 24rem;
+    float: right;
+}
+.gridPopular {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    row-gap: 2rem;
+}
+.popularTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.offerPopular {
+    background-color: white;
+    padding: .5rem;
+    height: 10rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+}
+.imgPopular {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 8.5rem;
+    border-radius: .5rem 0 0 .5rem;
+    float: left;
+    margin-right: 1rem;
+    -webkit-user-drag: none;
+}
+.accommodationGlobal {
+    background-color: #F2F2F2;
+    display: flex;
+    border-radius: 1.5rem;
+    flex-direction: column;
+    height: 43.5rem;
+    padding: 0 2rem;
+}
+.accommodationGlobal > a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    top: 1.5rem;
+}
+.accommodationGlobal > .accommodation {
+    justify-content: center;
+}
+.accommodation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+    column-gap: 3rem;
+}
+.offerAccommodation {
+    background-color: white;
+    cursor: pointer;
+    padding: .4rem .4rem .8rem .4rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+    box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+}
+.imgAccommodation {
+    object-fit: cover;
+    object-position: center;
+    height: 8.4rem;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    -webkit-user-drag: none;
+}
+.textAccommodation {
+    margin-left: .8rem;
+    line-height: .5rem;
+}
+.activityGlobal {
+    display: flex;
+    flex-direction: column;
+    padding: 2.3rem 0 2.3rem;
+}
+.activity {
+    display: grid;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: 
+    "highRecommendation1 Recommendation1 highRecommendation2 Recommendation3"
+    "highRecommendation1 Recommendation2 highRecommendation2 Recommendation4";
+}
+.availableActivityHigh1 {
+    grid-area: highRecommendation1;
+}
+.availableActivityHigh2 {
+    grid-area: highRecommendation2;
+}
+.availableActivityR1 {
+    grid-area: Recommendation1;
+}
+.availableActivityR2 {
+    grid-area: Recommendation2;
+}
+.availableActivityR3 {
+    grid-area: Recommendation3;
+}
+.availableActivityR4 {
+    grid-area: Recommendation4;
+}
+.availableActivity {
+    border-radius: 1.5rem;
+    box-shadow: .01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem .01rem .5rem rgba(0, 0, 0, 0.1), -.01rem -.01rem .5rem rgba(0, 0, 0, 0.1), .01rem -.01rem .5rem rgba(0, 0, 0, 0.1);
+    min-width: 18rem;
+}
+.imgActivity {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+    width: 100%;
+    height: 9rem;
+    -webkit-user-drag: none;
+}
+.imgActivityHigh {
+    height: 24.5rem;
+}
+.imgActivityR1 {
+    object-position: 50% 42%;
+}
+.imgActivityR2 {
+    object-position: 50% 28%;
+}
+.imgActivityR3 {
+    object-position: top;
+}
+.imgActivityR4 {
+    object-position: center;
+}
+.textActivity {
+    margin-left: 1rem;
+}
+footer {
+    background-color: #F2F2F2;
+    width: 100%;
+    margin: 0;
+}
+.footerInfo {
+    display: flex;
+    text-align: left;
+    padding: 1rem 0 1rem 0;
+}
+.about, .ourAccommodation, .assistance {
+    width: 33vw;
+    min-width: 20rem;
+}
+.footerList {
+    list-style: none;
+    line-height: 2rem;
+}
+.footerList > li a {
+    text-decoration: none;
+    color: black;
+}
+@media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+        .popular {
+            float: none;
+            margin-left: 0;
+            margin-bottom: 2.3rem;
+            height: 24.5rem;
+            width: auto;
+        }
+        .gridPopular {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 3rem;
+        }
+        .offerPopular {
+            background-color: white;
+            padding: .4rem .4rem .8rem .4rem;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+        }
+        .imgPopular {
+            object-fit: cover;
+            object-position: center;
+            height: 8.4rem;
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            float: none;
+        }
+        .textPopular {
+            margin-left: .8rem;
+            display: grid;
+            grid-template-rows: repeat(1, 4rem);
+        }
+        .activity {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-areas: 
+            "highRecommendation1 Recommendation1"
+            "highRecommendation1 Recommendation2"
+            "Recommendation3 highRecommendation2"
+            "Recommendation4 highRecommendation2";
+        }
+    }
+    @media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 767px) {
+        main, header, .footerInfo{
+            width: 100%;
+        }
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            height: 8rem;
+        }
+        .userNavigation {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .select:hover {
+            border-top: solid 0.15rem transparent;
+        }
+        .selectActivity {
+            border-bottom: .15rem solid #F2F2F2;
+        }
+        .selectAccommodation {
+            border-bottom: .15rem solid #0056fc;
+            color: #0056fc;
+        }
+        .sign {
+            position: relative;
+            top: 0;
+            right: 0;
+        }
+        .inResearch {
+            width: 20vw;
+        }
+        .popular {
+            float: none;
+            margin-left: 0;
+            margin-bottom: 2.3rem;
+            width: 100%;
+            height: auto;
+            padding-bottom: 2rem;
+            box-sizing: border-box;
+        }
+        .offerPopular {
+            background-color: white;
+            padding: .4rem .4rem .8rem .4rem;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+        }
+        .imgPopular {
+            object-fit: cover;
+            object-position: center;
+            height: 8.4rem;
+            width: 100%;
+            border-radius: 1rem 1rem 0 0;
+            float: none;
+        }
+        .accommodation {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .accommodationGlobal {
+            height: auto;
+            padding: 0 2rem 2rem;
+            background-color: white;
+        }
+        .activity {
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-areas: 
+            "highRecommendation1"
+            "Recommendation1"
+            "Recommendation2"
+            "highRecommendation2"
+            "Recommendation3"
+            "Recommendation4";
+        }
+        .availableActivity {
+            min-width: 1rem;
+        }
+        .footerInfo {
+            flex-direction: column;
+        }
+        .about, .ourAccommodation, .assistance {
+            width: 100%;
+        }
+        body {
+            width: 375px;
+        }
+    }
